@@ -3,4 +3,15 @@ const productos = [
   { id: 2, nombre: 'Leche', precio: 3500 }
 ];
 
-console.log("Catálogo de productos:", productos);
+function realizarCompra(productoId, cantidad) {
+  const producto = productos.find(p => p.id === productoId);
+  if (producto) {
+    const total = producto.precio * cantidad;
+    console.log(`Compra realizada: ${cantidad}x ${producto.nombre} - Total: $${total}`);
+  } else {
+    console.log("Producto no encontrado");
+  }
+}
+
+
+realizarCompra(1, 3);
